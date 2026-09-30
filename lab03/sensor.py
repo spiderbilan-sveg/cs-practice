@@ -1,23 +1,23 @@
-porog = int(input())
+porog = float(input())
 n = int(input())
-n1 = 0
-erc = 0
-porc = 0
-maxx = 0
-sr = 0
+kv = 0
+kv1 = 0
+maxi = -1E17
+a = []
 for i in range(n):
     c = input()
     if c == 'error':
-        erc += 1
-    else:
-        if float(c) > porog:
-            porc += 1
-        if float(c) > maxx:
-            maxx = float(c)
-        sr += float(c)
-        n1 += 1
-print("Количество записей:",n)
-print("Количество ошибок:",erc)
-print("Знгачений выше порога",porc)
-print(f'Максимальное значение: {maxx:.1f}')
-print(f'Среднее значение: {sr/n1:.1f}')
+        kv += 1
+    if c != 'error':
+        q = float(c)
+        a.append(q)
+        if q > porog:
+            kv1 += 1
+        if q > maxi:
+            maxi = q
+sr = sum(a)/len(a)       
+print(n)
+print(kv)
+print(kv1)
+print(f'{maxi:.1f}')
+print(f'{sr:.1f}')
