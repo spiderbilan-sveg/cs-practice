@@ -9,7 +9,7 @@ def winner(names, scores):
 
 def average(scores):
     if scores:
-        return sum(scores)/len(scores)
+        return round(sum(scores)/len(scores), 2)
     else:
         return 0.0
 
