@@ -1,23 +1,22 @@
 import numpy as np
 
 def make_hours():
-    return np.arange(0, 21, 3, dtype=float)
+    return np.arange(0, 21, 3, dtype=float).tolist()
 
 def vector_report(values):
-    val = np.array(values)
     return {
-        "third": val[2], 
-        "last": val[-1], 
-        "middle": val[2:6], 
-        "every_second": val[::2], 
-        "reversed": val[::-1]
+        "third": values[2], 
+        "last": values[-1], 
+        "middle": values[2:6], 
+        "every_second": values[::2], 
+        "reversed": values[::-1]
         }    
     
 def change_vector(values):
     val = np.copy(values)
     val[1:4] = 99
     val[::2] = -1
-    return val
+    return val.tolist()
 
 def cap_above(values, limit):
     arr = np.asarray(values, dtype = float).copy()
