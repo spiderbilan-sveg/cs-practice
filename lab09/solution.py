@@ -1,7 +1,7 @@
 import numpy as np
 
 def make_hours():
-    return np.arange(0, 21, 3, dtype=float).tolist()
+    return np.arange(0, 22, 3).tolist()
 
 def vector_report(values):
     return {
@@ -14,9 +14,9 @@ def vector_report(values):
     
 def change_vector(values):
     val = np.copy(values)
-    val[1:4] = 99
+    val[2:4] = 99
     val[::2] = -1
-    return val.tolist()
+    return [float(i) for i in val]
 
 def cap_above(values, limit):
     arr = np.asarray(values, dtype = float).copy()
